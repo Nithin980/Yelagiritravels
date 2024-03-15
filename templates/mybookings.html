@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+  <head>
+    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+  {% include 'dashboardheader.html' %}
+
+<h2>{{Booking.username}}</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phoneno</th>
+    <th>Boarding location</th>
+    <th>Drop location</th>
+    <th>Date of travel</th>
+    <th>Car</th>
+    <th>Status</th>
+  </tr>
+  {% for Booking in book %}
+  <tr>
+    <td>{{Booking.username}}</td>
+    <td>{{Booking.email}}</td>
+    <td>{{Booking.Phoneno}}</td>
+    <td>{{Booking.boarding}}</td>
+    <td>{{Booking.drop}}</td>
+    <td>{{Booking.date_of_travel}}</td>
+    <td>{{Booking.car}}</td>
+    <td>{{Booking.status}}</td>
+
+  </tr>
+  {%endfor%}
+ 
+ 
+ 
+</table>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% load static %}
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation in HTML | CodingNepal</title>
+    <link rel="stylesheet" href="{% static 'book/form.css' %}">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <form method='POST'>
+      {% csrf_token %}
+      <h2>Book your car now!!</h2>
+
+      <div class='form-group'>
+        <input type="hidden" name="username" value="{{user.username}}" id="id_username">
+      </div>
+
+
+      <div class='form-group'>
+        <input type="hidden" name="email" value="{{user.email}}" id="id_email">
+      </div>
+
+
+      <div class='form-group'>
+        {{form.status}}
+      </div>
+
+      <div class='form-group'>
+        {{form.Phoneno}}
+      </div>
+
+
+      <div class='form-group'>
+        {{form.boarding}}
+      </div>
+
+      <div class='form-group'>
+        {{form.drop}}
+      </div>
+
+      <div class='form-group' ><p>Date of travel<p>
+        {{form.date_of_travel}}
+      </div>
+    
+
+    
+      
+      <label>Choose your car<input list="car" name="car" id="id_car" /></label>
+        <datalist id="car">
+        {% for Car in cars %}
+          <option value="{{Car.Brand}}">
+            {% endfor %}
+        </datalist>
+  
+      
+      
+
+
+      <div class="form-group submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+    <script src="{% static 'book/form.js' %}"></script>
+  </body>
+</html>
