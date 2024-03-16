@@ -1,3 +1,5 @@
+
+
 function sendotp(subjecttype){
     var email=document.getElementById('id_email').value;
     if(!email)
@@ -6,6 +8,7 @@ function sendotp(subjecttype){
         return;
     }
     javascript:incTimer();
+    
     $.ajax({
         url : "/yelagiritravels/triggerotp", // the endpoint
         type : "GET", // http method
@@ -15,6 +18,7 @@ function sendotp(subjecttype){
         // handle a successful response
         success : function(json) {
             console.log("success"); // another sanity check
+           // otpsuccess();
         },
         // handle a non-successful response
         error : function(xhr,errmsg,err) {
