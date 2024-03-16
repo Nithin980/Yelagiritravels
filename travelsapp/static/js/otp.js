@@ -1,15 +1,11 @@
 function sendotp(subjecttype){
-    //console.log("running");
-    //alert(subjecttype)
-
     var email=document.getElementById('id_email').value;
-
     if(!email)
     {
         alert('Fill in all details before sending OTP');
         return;
     }
-    //alert(email)
+    javascript:incTimer();
     $.ajax({
         url : "/yelagiritravels/triggerotp", // the endpoint
         type : "GET", // http method

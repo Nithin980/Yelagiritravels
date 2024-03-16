@@ -94,8 +94,11 @@
                                 <div style='width:60%; float:left'>
                                     {{form.otp}}</div> 
                                 <div style='padding:5px;'>
-                                    <span><button style='background:#eb1616;color:#fff;' role="button" name="otp"   onclick="incTimer();sendotp(1);">sendotp</button>
+                                    {% include 'notification.html'%}
+                                    <span><button style='background:#eb1616;color:#fff;' role="button" name="otp" id='btnsendotp'  onclick="sendotp(1);">sendotp</button>
+                                    </span>
                                     </div>
+                                    <label id='timeLeft'><label>
                             </div>
                             {% if form.errors.otp %}
                             <label class="text-danger d-block">{{ form.errors.otp }}</label>
